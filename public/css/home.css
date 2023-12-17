@@ -1,0 +1,476 @@
+
+html{
+    margin : 0 ;
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif!important;
+
+}
+
+a {
+    text-decoration: none;
+}
+body{
+    background-color: whitesmoke;
+}
+.container{
+    min-height: 500px;
+    width: 40%;
+    margin: 5% auto;
+    background-color: white;
+    border-radius: 16px;
+    padding :10px 10px 0 10px;
+    overflow: hidden;
+    position:relative;
+
+}
+.header{
+    width: 100%;
+
+}
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-top .header-avatar {
+ width: 4rem;
+ height: 4rem;
+ background-color: aqua;
+ border-radius: 50%;
+ /* overflow: hidden; */
+ position: relative;
+}
+.header-top .header-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.header-top .header-avatar::after {
+content: "";
+position: absolute;
+width: 1.2rem;
+height: 1.2rem;
+background-color: rgb(5, 238, 106);
+bottom:0;
+right: 0;
+border:2px solid white;
+border-radius: 50%;
+}
+.header-top .header-title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    flex:1;
+    text-align: center;
+    margin-left:-4rem;
+}
+.header_searchBar input {
+width: calc(100% - 10px);
+padding :10px 50px;
+border: none;
+outline: none;
+background-color: rgb(234, 237, 240);
+border-radius: 10px;
+
+}
+
+.header_searchBar{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.result_search{
+    position: absolute;
+    /* background-color: blue; */
+    background-color: white;
+    width: 100%;
+    top:4rem;
+    min-height:500px;
+    max-height: 1500px;
+    overflow-y: scroll;
+    white-space: nowrap;
+    display: none;
+    z-index: 999;
+
+}
+.result_search::-webkit-scrollbar{
+    display: none;
+}
+.header_searchBar div {
+    height: 3rem;
+}
+
+
+.header_searchBar i {
+    position: absolute;
+    z-index: 1;
+    font-size: 2rem;
+    color :rgb(168, 179, 191);
+    cursor: pointer;
+    top:50%;
+    transform: translateY(-50%);
+    left:2%;
+}
+.header_user-active{
+    /* background-color: aqua; */
+    margin-top: 1rem;
+    width: calc(100% - 1rem);
+    height : 10rem;
+    display: flex;
+    max-width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.header_user-active::-webkit-scrollbar{
+    display: none;
+}
+.header_user-active a{
+width: 7rem;
+height: 7rem;
+margin-right: 1.6rem;
+/* background-color: red; */
+}
+.header_user-active a .img {
+    width: 7rem;
+    height: 7rem;
+    position: relative;
+    /* background-color: aqua; */
+}
+.header_user-active a .img::after{
+    content: "";
+position: absolute;
+width: 1.2rem;
+height: 1.2rem;
+background-color: rgb(5, 238, 106);
+bottom:0;
+right: 0;
+border:2px solid white;
+border-radius: 50%;
+}
+
+.header_user-active a .img img {
+    width: 100%;
+    height: 100%;
+    border-radius:50% ;
+    object-fit: cover;
+}
+.header_user-active a .name {
+ width : 6rem ;
+ overflow: hidden;
+ margin-left:5px;
+}
+.header_user-active a .name p {
+    white-space: nowrap; /* Ngăn văn bản bị xuống dòng */
+    overflow: hidden; /* Ẩn phần vượt quá container */
+    text-overflow: ellipsis; /* Hiển thị dấu "..." khi văn bản bị ẩn */
+ font-size: 1.3rem;
+}
+.header_user-active a{
+    text-align: center;
+    text-decoration: none;
+}
+
+.user-list-chat {
+    margin-top: 1rem;
+    width: calc(100% - 1rem);
+    /* height : 10rem; */
+    /* display: flex; */
+    height: 300px;
+    max-height: 1500px;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+.user-list-chat::-webkit-scrollbar{
+    display: none;
+}
+.user-list-chat a {
+    margin-bottom: 1rem;
+    height: 6rem;
+    display: flex;
+    margin-bottom: 1.6rem;
+    justify-content: center;
+    align-items: center;
+    
+    /* background-color: red; */
+}
+.active.user-item-chat {
+position: relative;
+}
+.active.user-item-chat .content .name,.active.user-item-chat .content .message{
+    font-weight: 700;
+    color:black;
+}
+.active.user-item-chat::after{
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    right: 0;
+    top:50%;
+    transform: translateY(-50%);
+    background-color: rgb(76, 76, 247);
+    border-radius: 50%;
+   
+}
+.user-list-chat a .img {
+    width: 6rem;
+    height: 6rem;
+    position: relative;
+    /* flex:1; */
+}
+.user-list-chat a .content{
+    margin-left: 2rem;
+    flex: 1;
+   
+}
+
+.user-list-chat a .content .name {
+    font-size: 2rem;
+    font-weight: 500;
+    color :black;
+    font-family:'Times New Roman', Times, serif;
+    margin-top: -1rem;
+    
+}
+.user-list-chat a .content .message{
+    margin-top: 0.6rem;
+    font-size: 1.5rem;
+    color: slategray;
+}
+.user-list-chat a .img::after{
+    content: "";
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: rgb(5, 238, 106);
+    bottom:0;
+    right: 0;
+    border:2px solid white;
+    border-radius: 50%;
+    z-index: 1;
+}
+.user-list-chat a .img img {
+    width: 100%;
+    height: 100%;
+    border-radius:50% ;
+    object-fit: cover;
+}
+.footer{
+    margin-left: calc(-16%);
+    margin-top: 1rem;
+    width:120%;
+    background-color: rgba(245, 245, 245, 0.562);
+    height: 5rem;
+    
+}
+.footer .menu ul {
+    margin : 0;
+    list-style: none;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+  
+  
+}
+.footer ul  li a {
+    font-size: 2rem;
+    display: block;
+    padding :10% 0;
+    display: flex;
+    flex-direction: column;
+}
+.footer ul  li a span {
+   font-size: 1.2rem;
+   margin-top: 10px;
+  /* margin-left: -1rem; */
+}
+
+/* css modal */
+.modal{
+position:absolute;
+width: 60%;
+height: 100%;
+background-color: white;
+z-index: 2;
+padding : 12px 12px 12px 25px;
+box-shadow: 2px 0 6px rgba(0, 0, 0, 0.354);
+left :-10px;
+top:-10px;
+transform: translateX(-100%);
+transition: transform 0.3s ease;
+}
+
+.modal-top{
+    display: flex;
+}
+.modal-top .name-user{
+    flex:1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.name-user i {
+    cursor: pointer;
+}
+.modal-menu {
+    margin-top: 2rem;
+}
+.modal-menu .menu-item{
+    width: 100%;
+    /* background-color: red; */
+    margin-bottom: 10px ;
+    font-size: 2rem;
+}
+.menu-item {
+   display: flex;
+   font-weight: bold;
+   font-family: 'Times New Roman', Times, serif;
+}
+ .icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(112, 128, 144, 0.178);
+   border-radius: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.icon ~span {
+    display: inline-block;
+    margin-left:1.3rem ;
+    padding-top:5px;
+}
+.numberofChat{
+    margin-left: 3rem;
+    margin-top: 8px;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(76, 76, 247);
+    border-radius: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    color :white;
+    /* margin:auto; */
+}
+.active-modal {
+    transform: translateX(0);
+}
+/* css modal change Account */
+.modal-changeAcc{
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    background-color: white;
+    z-index: 3;
+    padding : 12px 12px 12px 25px;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.354);
+     bottom: 0;
+     left:-10px;
+    transform: translateY(110%);
+    transition: transform 0.3s ease;
+
+}
+.modal-changeAcc .header{
+    display: flex;
+}
+.modal-changeAcc .header .Done{
+    margin: 0 10% 0 0;
+    font-size: 1.4rem;
+    color :  rgb(76, 76, 247);
+    font-weight: 700;
+    cursor: pointer;
+}
+.modal-changeAcc .header .title{
+    flex: 1;
+    text-align: center;
+    font-size: 1.5rem;
+    margin:0;
+    font-weight: 700;
+}
+.active-modalChangeAcc {
+    transform: translateY(0);
+}
+.list-acc{
+    list-style: none;
+    padding :0;
+}
+.list-acc li:not(:last-child) {
+    min-height: 5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(192, 192, 192, 0.304);
+}
+.list-acc li:last-child{
+    display: flex;
+    align-items: center;
+}
+.list-acc li:last-child p {
+    flex: 1;
+    text-align: center;
+    font-size:1.5rem ;
+    margin: 0;
+    color :  rgb(76, 76, 247);
+    font-weight: 700;
+    margin-left: -12%;
+}
+.modal-changeAcc .name-user p{
+  margin: 0;
+  width: 15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+ .list-acc .name-user{
+    margin-left: -30%;
+    display: flex;
+    flex-direction: column;
+}
+.name-user .Status{
+    font-size: 1rem;
+    color:slategray;
+}
+/* css result search */
+.list-item a{
+    width: 70%;
+    
+}
+.list-item{
+    list-style: none;
+    padding-left: 10px;
+}
+.list-item li{
+    margin-bottom: 1rem;
+}
+.list-item li a {
+    display: flex;
+    align-items: center;
+}
+.list-item li a .img_container {
+width: 3.5rem;
+height: 3.5rem;
+}
+.img_container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.list-item li a .name {
+    flex: 1;
+   margin-left: 1rem; 
+    font-size: 1.7rem;
+ margin-top: 4%;
+}
+.name p {
+    margin:0;
+    font-weight: 500;
+    font-family:'Times New Roman', Times, serif;
+}
+.modal-top.user .header-top{
+    display: flex;
+}

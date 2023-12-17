@@ -1,0 +1,12 @@
+.container {
+    min-height: 500px;
+}
+.container-left .option a{
+   color: rgba(255, 68, 0, 0.63);
+}
+.form-signup button{
+    background-color: rgba(255, 68, 0, 0.63);
+}
+.container-right{
+    background-color: rgba(255, 68, 0, 0.63);
+}
